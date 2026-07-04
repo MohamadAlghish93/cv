@@ -183,6 +183,19 @@
 \end{cvachievements}
 {% endif %}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       Languages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{% if languages %}
+\cvsection{Languages}
+\vspace{0.5mm}
+\begin{cvachievements}
+\setlength{\itemsep}{0mm}
+{%- for lang in languages %}
+  \item { \textbf{ {{ lang.language | latex_escape }} } - {{ lang.fluency | latex_escape }} }
+{%- endfor %}
+\end{cvachievements}
+{% endif %}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Footer
@@ -190,10 +203,9 @@
 \vspace{5mm}
 \begin{center}
     \tiny\color{lightgray}
-    Resume built with LaTeX, view source at
-    \href{https://github.com/lissy93/cv}{ github.com/lissy93/cv }.
+    Resume built with LaTeX
     Licensed under MIT (C)
-    \href{https://aliciasykes.com}{ {{ basics.name | latex_escape }} } {\the\year}
+    \href{https://www.alghosh.website}{ {{ basics.name | latex_escape }} } {\the\year}
 \end{center}
 \ 
 \end{document}
