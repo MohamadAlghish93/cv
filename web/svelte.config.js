@@ -6,21 +6,19 @@ const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
 	kit: {
-		// Use static adapter for GitHub Pages deployment, auto adapter otherwise
-		adapter: process.env.GITHUB_PAGES
-			? adapterStatic({
-				pages: 'build',
-				assets: 'build',
-				fallback: 'index.html',
-				precompress: false,
-				strict: false
-			}),
+		adapter: adapterStatic({
+			// this folder will be committed to your Pages branch
+			pages: 'build',
+			assets: 'build',
+			fallback: 'index.html',
+			precompress: false,
+			strict: false
+		}),
 
+		// IMPORTANT: base path for GitHub Pages project site
 		paths: {
 			base: dev ? '' : '/cv'   // 'cv' must match repo name
 		},
