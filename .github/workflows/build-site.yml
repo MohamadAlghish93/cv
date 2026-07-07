@@ -179,8 +179,8 @@ jobs:
           external_repository: ${{ github.repository }}
           publish_branch: website
           publish_dir: ./website/
-          user_name: 'liss-bot'
-          user_email: 'alicia-gh-bot@mail.as93.net'
+          user_name: 'cv-deploy-bot'
+          user_email: 'cv-deploy-bot@mail.as93.net'
           commit_message: |
             🪁 Deploy website from ${{ github.sha }}
             
