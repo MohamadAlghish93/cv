@@ -10,22 +10,14 @@ const config = {
 
 	kit: {
 		adapter: adapterStatic({
-			// this folder will be committed to your Pages branch
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			fallback: 'index.html',   // SPA mode for GitHub Pages
 			precompress: false,
 			strict: false
 		}),
-
-		// IMPORTANT: base path for GitHub Pages project site
 		paths: {
-			base: dev ? '' : '/cv'   // 'cv' must match repo name
-		},
-
-		// Ensure everything is pre-rendered as static HTML
-		prerender: {
-			default: true
+			base: dev ? '' : '/cv'     // important for GitHub Pages project site
 		}
 	}
 };
