@@ -142,6 +142,13 @@ def generate_markdown(resume: Dict[str, Any]) -> str:
     achievement_items = [f"{achievement}\n" for achievement in achievements]
     md_content.append(format_section('Achievements', achievement_items))
 
+    languages = resume.get('languages', [])
+    language_items = [
+        f"- **{lang['language']}**: {lang.get('fluency', '')}"
+        for lang in languages
+    ]
+    md_content.append(format_section('Languages', language_items))
+
     return ''.join(md_content)
 
 def main():
