@@ -19,8 +19,8 @@ const config = {
 				fallback: 'index.html',
 				precompress: false,
 				strict: false
-			})
-			: adapterAuto(),
+			}),
+
 		paths: {
 			base: dev ? '' : '/cv'   // 'cv' must match repo name
 		},
