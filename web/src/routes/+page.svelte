@@ -1,5 +1,8 @@
 <script lang="ts">
 	import '../styles/resume-main.scss';
+	import { base } from '$app/paths';
+
+	const withBase = (path: string) => `${base}${path}`;
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let { data }: { data: any } = $props();
@@ -49,7 +52,7 @@
 	<!-- Personal statement -->
 	<section class="personal-statement">
 		<p>{data['personal-statement']}</p>
-		<a href="/intro" class="small-btn no-underline">
+		<a href={withBase('/intro')} class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-address-card"></i>
 			View Full Bio
 			<i class="fa-solid fa-arrow-right"></i>
@@ -73,7 +76,7 @@
 					</ul>
 				</div>
 			{/each}
-			<a href="/experience" class="small-btn no-underline">
+			<a href={withBase('/experience')} class="small-btn no-underline">
 				<i class="nav-icon fa-solid fa-briefcase"></i>
 				View All Experience
 				<i class="fa-solid fa-arrow-right"></i>
@@ -104,7 +107,7 @@
 				</li>
 			{/each}
 		</ul>
-		<a href="/skills" class="small-btn no-underline">
+		<a href={withBase('/skills')} class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-code"></i>
 			View All Skills
 			<i class="fa-solid fa-arrow-right"></i>
@@ -130,7 +133,7 @@
 				</li>
 			{/each}
 		</ul>
-		<a href="/achievements" class="small-btn no-underline">
+		<a href={withBase('/achievements')} class="small-btn no-underline">
 			<i class="nav-icon fa-solid fa-star"></i>
 			View All Achievements
 			<i class="fa-solid fa-arrow-right"></i>

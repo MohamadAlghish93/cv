@@ -1,17 +1,23 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { derived } from 'svelte/store';
 	import { onMount, type Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import { onNavigate } from '$app/navigation';
+	import { base, assets } from '$app/paths';
 	import '../app.css';
 	import '../styles/variables.scss';
 	import '../styles/link.scss';
 	import '../styles/page-global.scss';
 
+	const withBase = (path: string) => `${base}${path}`;
+	const normalizePath = (pathname: string) => (pathname.startsWith(base) ? pathname.slice(base.length) || '/' : pathname);
+
 	let { children }: { children: Snippet } = $props();
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
+
 		return new Promise<void>((resolve) => {
 			document.startViewTransition!(async () => {
 				resolve();
@@ -23,7 +29,6 @@
 	let header: HTMLElement | null = null;
 	let main: HTMLElement | null = null;
 
-	// Display banner if looking for job, within the specified dates. Format date into human readable string
 	const lookingForJobDates = {
 		start: new Date('2024-09-01'),
 		end: new Date('2024-12-31')
@@ -58,35 +63,15 @@
 		}
 	});
 
-	let path = $derived(page.url.pathname);
+	let path = derived(page.url.pathname, ($pathname) => normalizePath($pathname));
 
 	const socials = [
 		{ name: 'GitHub', url: 'https://github.com/lissy93', icon: 'fa-github', color: '#333' },
-		{
-			name: 'Twitter',
-			url: 'https://twitter.com/lissy_sykes',
-			icon: 'fa-twitter',
-			color: '#1DA1F2'
-		},
-		{
-			name: 'LinkedIn',
-			url: 'https://www.linkedin.com/in/aliciasykes/',
-			icon: 'fa-linkedin',
-			color: '#0A66C2'
-		},
-		{
-			name: 'Mastodon',
-			url: 'https://mastodon.social/@lissy93',
-			icon: 'fa-mastodon',
-			color: '#6364FF'
-		},
+		{ name: 'Twitter', url: 'https://twitter.com/lissy_sykes', icon: 'fa-twitter', color: '#1DA1F2' },
+		{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/aliciasykes/', icon: 'fa-linkedin', color: '#0A66C2' },
+		{ name: 'Mastodon', url: 'https://mastodon.social/@lissy93', icon: 'fa-mastodon', color: '#6364FF' },
 		{ name: 'DEV.to', url: 'https://dev.to/lissy93', icon: 'fa-dev', color: '#f04c8a' },
-		{
-			name: 'StackOverflow',
-			url: 'https://stackoverflow.com/users/979052/alicia-sykes',
-			icon: 'fa-stack-overflow',
-			color: '#F58025'
-		}
+		{ name: 'StackOverflow', url: 'https://stackoverflow.com/users/979052/alicia-sykes', icon: 'fa-stack-overflow', color: '#F58025' }
 	];
 
 	const navLinks = [
@@ -106,9 +91,9 @@
 <div class="app">
 	<aside>
 		<div class="aside-inner">
-			<a href="/" class="no-underline"><h1>CV: Alicia Sykes</h1></a>
+			<a href={withBase('/')} class="no-underline"><h1>CV: Alicia Sykes</h1></a>
 			<h2 class="job-title">Principal Engineer</h2>
-			<img class="profile-picture" width="300" src="/profile-picture.jpg" alt="Alicia Sykes" />
+			<img class="profile-picture" width="300" src={`${assets}/profile-picture.jpg`} alt="Alicia Sykes" />
 			<ul class="socials">
 				{#each socials as { name, url, icon, color }}
 					<li style="--hover-color: {color}">
@@ -122,7 +107,7 @@
 				<ul>
 					{#each navLinks as { name, url, icon }}
 						<li class:is-active={path === url}>
-							<a class="no-underline" href={url}>
+							<a class="no-underline" href={withBase(url)}>
 								<i class="nav-icon fa-solid {icon}"></i>
 								{name}
 							</a>
@@ -130,7 +115,7 @@
 					{/each}
 					{#if path !== '/'}
 						<li>
-							<a href="/" class="no-underline">
+							<a href={withBase('/')} class="no-underline">
 								<i class="nav-icon fa-solid fa-home"></i>
 								Home
 							</a>
@@ -138,7 +123,7 @@
 					{/if}
 				</ul>
 			</nav>
-			<a href="/download" class="no-underline">
+			<a href={withBase('/download')} class="no-underline">
 				<button class="download-btn">
 					<i class="fa-solid fa-file-arrow-down"></i>
 					Download CV
@@ -149,7 +134,7 @@
 			</a>
 		</div>
 		<div class="aside-bottom">
-			<a class="get-in-touch" href="/contact">
+			<a class="get-in-touch" href={withBase('/contact')}>
 				<i class="fa-solid fa-paper-plane"></i>
 				Send me a Message
 			</a>
@@ -180,12 +165,12 @@
 						<strong>As of {startDateFormatted}, I am actively seeking new opportunities!</strong>
 						<br />
 						Read my
-						<a href="/intro">full bio</a>
+						<a href={withBase('/intro')}>full bio</a>
 						to learn more about me, and if you think I could be a good fit for your team, please
-						<a href="/contact">get in touch</a>
+						<a href={withBase('/contact')}>get in touch</a>
 						.
 					</p>
-					<a href="/ideal-role" class="small-btn no-underline">
+					<a href={withBase('/ideal-role')} class="small-btn no-underline">
 						<i class="fa-solid fa-bullseye-arrow"></i>
 						View Ideal Role
 						<i class="fa-solid fa-arrow-right"></i>

@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
+	import { base } from '$app/paths';
+	const withBase = (path: string) => `${base}${path}`;
+
 	const navLinks = [
-		{ name: 'Intro', url: '/intro', icon: 'fa-address-card' },
-		{ name: 'Experience', url: '/experience', icon: 'fa-briefcase' },
-		{ name: 'Achievements', url: '/achievements', icon: 'fa-star' },
-		{ name: 'Skills', url: '/skills', icon: 'fa-code' }
+		{ name: 'Intro', url: withBase('/intro'), icon: 'fa-address-card' },
+		{ name: 'Experience', url: withBase('/experience'), icon: 'fa-briefcase' },
+		{ name: 'Achievements', url: withBase('/achievements'), icon: 'fa-star' },
+		{ name: 'Skills', url: withBase('/skills'), icon: 'fa-code' }
 	];
 
 	const intro = [
@@ -82,17 +85,17 @@
 <h2>Why me?</h2>
 <p>
 	I'm an accomplished full-stack senior developer, just take a look at my recent
-	<a href="/achievements">achievements</a>
+	<a href={withBase('/achievements')}>achievements</a>
 	for evidence of this! You can learn more about me, my attributes and the philosophy that drives me in
 	my
-	<a href="/intro">intro</a>
+	<a href={withBase('/intro')}>intro</a>
 	page. Or if you prefer to see my past work, take a look at my published apps at
 	<a href="https://apps.aliciasykes.com">apps.aliciasykes.com</a>
 </p>
 
 <h2>Get in Touch</h2>
 <p>
-	Does this sound good to you? If so, I'd love to hear from you! So please do <a href="/contact"
+	Does this sound good to you? If so, I'd love to hear from you! So please do <a href={withBase('/contact')}
 		>get in touch</a
 	>.
 </p>

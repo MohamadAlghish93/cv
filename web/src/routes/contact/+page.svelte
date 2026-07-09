@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+	import { base } from '$app/paths';
+	const withBase = (path: string) => `${base}${path}`;
 	let emailVisible = $state(false);
 	const revealEmail = () => {
 		emailVisible = true;
@@ -37,16 +39,16 @@
 
 <div class="some-text">
 	<p>
-		You can learn more about me on the <a href="/intro">intro</a>
+		You can learn more about me on the <a href={withBase('/intro')}>intro</a>
 		page, or browse the
-		<a href="/skills">skills</a>
+		<a href={withBase('/skills')}>skills</a>
 		,
-		<a href="/experience">experience</a>
+		<a href={withBase('/experience')}>experience</a>
 		and
-		<a href="/achievements">achievements</a>
+		<a href={withBase('/achievements')}>achievements</a>
 		pages to see if I align with what you're looking for. A shortened version of my CV in PDF format can
 		be downloaded
-		<a href="/download">here</a>
+		<a href={withBase('/download')}>here</a>
 		.
 	</p>
 	<p>
@@ -59,7 +61,7 @@
 		<a href="https://apps.aliciasykes.com">apps.aliciasykes.com</a>
 	</p>
 	<p>
-		To see if I'd be a good fit for your team, you can view my <a href="/ideal-role">ideal role</a>
+		To see if I'd be a good fit for your team, you can view my <a href={withBase('/ideal-role')}>ideal role</a>
 	</p>
 	<p>
 		If you've got any questions, or would like me to send over some references, feel free to reach

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Language from '../../components/Language.svelte';
 
 	const stats = [
@@ -323,7 +324,7 @@
 </ul>
 
 <img
-	src="/assets/Hackathon-win-pictures.png"
+	src={`${base}/assets/Hackathon-win-pictures.png`}
 	alt="Hackathon wins"
 	width="100%"
 	class="hackathon-image"

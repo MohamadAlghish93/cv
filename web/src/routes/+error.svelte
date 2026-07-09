@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
 			An unexpected error occurred. Please try again later.
 		{/if}
 	</p>
-	<a href="/" class="no-underline big-btn">
+	<a href={base || '/'} class="no-underline big-btn">
 		<i class="fa-solid fa-arrow-left"></i>
 		Back to CV
 	</a>

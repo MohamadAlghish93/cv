@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import { base } from '$app/paths';
 
 	let loading = $state(true);
 	let error = $state(false);
@@ -9,7 +10,7 @@
 		if (browser) {
 			try {
 				// Try to download the PDF directly from the website
-				const pdfUrl = '/alicia-sykes-cv.pdf';
+const pdfUrl = `${base}/alicia-sykes-cv.pdf`;
 
 				// Check if the PDF exists
 				const response = await fetch(pdfUrl, { method: 'HEAD' });

@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
 import type { PageLoad } from './$types';
 import resumeYaml from '../../../../resume.yml?raw';
-import additionalData from '../../../static/data/additional-data.json';
+import additionalData from '$lib/data/additional-data.json';
 
 export const prerender = true;
 

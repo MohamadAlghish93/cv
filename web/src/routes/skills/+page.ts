@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import additionalData from '../../../static/data/additional-data.json';
+import additionalData from '$lib/data/additional-data.json';
 
 export const prerender = true;
 
