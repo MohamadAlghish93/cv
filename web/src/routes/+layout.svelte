@@ -66,12 +66,12 @@
 	let path = derived(page.url.pathname, ($pathname) => normalizePath($pathname));
 
 	const socials = [
-		{ name: 'GitHub', url: 'https://github.com/lissy93', icon: 'fa-github', color: '#333' },
-		{ name: 'Twitter', url: 'https://twitter.com/lissy_sykes', icon: 'fa-twitter', color: '#1DA1F2' },
-		{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/aliciasykes/', icon: 'fa-linkedin', color: '#0A66C2' },
-		{ name: 'Mastodon', url: 'https://mastodon.social/@lissy93', icon: 'fa-mastodon', color: '#6364FF' },
-		{ name: 'DEV.to', url: 'https://dev.to/lissy93', icon: 'fa-dev', color: '#f04c8a' },
-		{ name: 'StackOverflow', url: 'https://stackoverflow.com/users/979052/alicia-sykes', icon: 'fa-stack-overflow', color: '#F58025' }
+		{ name: 'GitHub', url: 'https://github.com/MohamadAlghish93', icon: 'fa-github', color: '#333' },
+		{ name: 'Twitter', url: 'https://twitter.com/AlghoshM', icon: 'fa-twitter', color: '#1DA1F2' },
+		{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/mohamad-alghish/', icon: 'fa-linkedin', color: '#0A66C2' },
+		// { name: 'Mastodon', url: 'https://mastodon.social/@lissy93', icon: 'fa-mastodon', color: '#6364FF' },
+		// { name: 'DEV.to', url: 'https://dev.to/lissy93', icon: 'fa-dev', color: '#f04c8a' },
+		// { name: 'StackOverflow', url: 'https://stackoverflow.com/users/979052/alicia-sykes', icon: 'fa-stack-overflow', color: '#F58025' }
 	];
 
 	const navLinks = [
@@ -91,9 +91,9 @@
 <div class="app">
 	<aside>
 		<div class="aside-inner">
-			<a href={withBase('/')} class="no-underline"><h1>CV: Alicia Sykes</h1></a>
-			<h2 class="job-title">Principal Engineer</h2>
-			<img class="profile-picture" width="300" src={`${assets}/profile-picture.jpg`} alt="Alicia Sykes" />
+			<a href={withBase('/')} class="no-underline"><h1>CV: Mohamad Alghosh</h1></a>
+			<h2 class="job-title">Software Engineer</h2>
+			<img class="profile-picture" width="300" src={`${assets}/profile-picture.png`} alt="Alicia Sykes" />
 			<ul class="socials">
 				{#each socials as { name, url, icon, color }}
 					<li style="--hover-color: {color}">

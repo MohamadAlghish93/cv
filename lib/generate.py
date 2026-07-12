@@ -109,7 +109,7 @@ def render_template(template_path: str, resume_data: dict) -> str:
         work=resume_data.get('work', []),
         education=resume_data.get('education', []),
         skills=resume_data.get('skills', []),
-        awards=resume_data.get('awards', []),
+        # awards=resume_data.get('awards', []),
         achievements=resume_data.get('achievements', []),
         projects=resume_data.get('projects', []),
         languages=resume_data.get('languages', []),

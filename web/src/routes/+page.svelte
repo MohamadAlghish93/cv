@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-	<title>Alicia Sykes | CV | Home</title>
+	<title>Mohamad Alghosh | CV | Home</title>
 </svelte:head>
 
 <div class="resume">
