@@ -236,7 +236,7 @@
 \definecolor{awesome-skyblue}{HTML}{0395DE}
 \definecolor{awesome-red}{HTML}{000000}
 \definecolor{awesome-pink}{HTML}{3A63CA}
-\definecolor{headerbg}{HTML}{3A63CA}
+\definecolor{headerbg}{HTML}{0395DE}
 \definecolor{awesome-orange}{HTML}{FF6138}
 \definecolor{awesome-nephritis}{HTML}{27AE60}
 \definecolor{awesome-concrete}{HTML}{95A5A6}
