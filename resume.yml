@@ -5,12 +5,11 @@ basics:
   location:
     address: Dubai, UAE
 personal-statement: |
-  Senior Software Engineer (Cloud Certified by AWS and Azure as Developer)
-  Flowchart Artist (Infrastructure , Cloud, System Design), Problem Solver
-  Experience Paths
-  Started with Full-stack Developer (4+ years)
-  Database Administrator and Systems Integration Developer (2+ years)
-  Found passion in DevOps, Software System Build, Business anaylaze between clients and Developers (currently - 3+ years)
+  Senior Software Engineer and DevOps Engineer with AWS and Azure certifications.
+  Experienced in cloud infrastructure, Infrastructure as Code (IaC), CI/CD automation,
+  Docker, Kubernetes, Terraform, AWS CloudFormation, monitoring, and system integration.
+  Background includes full-stack development, database administration, systems integration,
+  cloud migration, and business analysis between clients and development teams.
 extra-links:
   work_history:
     text: See all previous roles at linkedin.com/in/mohamad-alghish
@@ -52,10 +51,11 @@ work:
   startDate: 2018-08
   endDate: 2019-11
   highlights:
-  - Develop Sanad for management hospitality with archive file of patients.International Relation Department make connection between diverse department in centralized location to management employees and events inside company.
-  - Develop in Dubai Municipality Integration with payment portal (ERAD System)
-  - Develop Al Mamzar Park Management for management booking chalet and management parks and events connected to payment service and active directory, frontend base on Angular ,HTML, CSS
-  - Working in Alsaafat application project as Backend developer
+    - Developed Sanad, a hospitality management application with patient archive functionality, and the International Relations Department system to centralize employee and event management across departments.
+    - Developed and deployed a Dubai Municipality parks reservation application using Mendix and Mendix Cloud, supporting online booking, reservation workflows, and administrative management.
+    - Integrated the Dubai Municipality application with the ERAD payment portal to support secure online payments.
+    - Developed Al Mamzar Park Management for chalet bookings, park management, and event administration, integrated with payment services and Active Directory; built the frontend using Angular, HTML, and CSS.
+    - Worked as a backend developer on the Alsaafat application project.
 
 - name: L One Systems, Germany
   position: Backend Developer
@@ -67,51 +67,79 @@ work:
   - Application using MERN Stack with integrate MongoDB
 
 skills:
-- name: Frontend
-  keywords:
-  - React
-  - Svelte
-  - TypeScript
-- name: Backend
-  keywords:
-  - C#
-  - Node.js
-  - Python
-  - Java
-  - PHP
-- name: Mobile
-  keywords:
-  - swift
-  - Expo
-- name: DevOps
-  keywords:
-  - Ansible
-  - Kubernetes
-  - Terraform
-- name: Obs/Mon
-  keywords:
-  - Prometheus
-  - ELK stack
-  - OpenTelemetry
-  - Grafana
-- name: CI/CD
-  keywords:
-  - PowerShell
-  - GitHub Actions
-- name: Cloud
-  keywords:
-  - Vercel
-  - AWS
-  - Netlify
-  - Azure
-- name: Databases
-  keywords:
-  - Oracle
-  - PostgreSQL
-  - SQLite
-  - Redis
-  - MySQL
-  - MongoDB
+  - name: DevOps & Automation
+    keywords:
+      - CI/CD
+      - Continuous Integration
+      - Continuous Deployment
+      - Infrastructure as Code (IaC)
+      - Terraform
+      - Ansible
+      - GitLab CI/CD
+      - GitHub Actions
+      - PowerShell
+      - Python
+      - Bash
+
+  - name: Cloud Platforms
+    keywords:
+      - AWS
+      - Azure
+      - AWS Lambda
+      - Amazon EC2
+      - Amazon RDS
+      - Amazon VPC
+      - AWS IAM
+      - AWS Route 53
+      - AWS CloudFormation
+      - Azure DevOps
+
+  - name: Containers & Orchestration
+    keywords:
+      - Docker
+      - Kubernetes
+      - Container Orchestration
+      - OpenShift
+      - Helm
+
+  - name: Monitoring & Observability
+    keywords:
+      - Prometheus
+      - Grafana
+      - ELK Stack
+      - OpenTelemetry
+      - Log Analysis
+      - Service Monitoring
+
+  - name: Backend Development
+    keywords:
+      - C#
+      - .NET Core
+      - Node.js
+      - Python
+      - Java
+      - PHP
+
+  - name: Frontend Development
+    keywords:
+      - React
+      - Svelte
+      - TypeScript
+      - Angular
+
+  - name: Databases
+    keywords:
+      - Oracle
+      - PostgreSQL
+      - MySQL
+      - SQL Server
+      - MongoDB
+      - Redis
+      - SQLite
+
+  - name: Low-Code Platforms
+    keywords:
+      - Mendix
 
 achievements:
   - text: Microsoft Certified DevOps Engineer Expert
